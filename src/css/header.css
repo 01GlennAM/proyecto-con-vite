@@ -1,0 +1,74 @@
+/* estilos propios del header */ 
+
+.contenedor-header{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header{
+    margin-top: 40px;
+    display:flex;
+    justify-content: space-between;
+
+    .logo{
+        display: inline-block;
+        background: var(--azul-secundario);
+        padding: 20px;
+        width: auto;
+        height: 30px;
+        border-radius: 10px 0px 0px 0px ;
+        position: relative;
+
+        img{
+            height: 100%;
+        }
+        
+        /*esto es para el diseño del icono del trace es ese triandulo q esta al lado del icono (el before y el after) */  
+
+        &::before{
+            content: '';
+            display: block;
+            width: 100%;
+            background: var(--azul-secundario);
+            height: 20px;
+            position: absolute;
+            bottom: -20px;
+            left: 0px;
+
+        }
+
+        &::after{
+            content: ''; /* siempre se trabaja con este conten vacio  */
+            display: block;
+            position: absolute; /* para poder posicionar el triangulo */  
+            border-top: 70px solid transparent;
+            border-right: 70px solid transparent;
+            border-bottom: 70px solid var(--azul-secundario);
+            top: -70px;
+            right: -70px;
+        } 
+    }
+
+    .nav{
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        flex-wrap: wrap; /* para q no se desborden cuando la pantalla sea mas pequeña */ 
+        justify-content: center;
+        
+        a{
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            font-weight: 700;
+
+            &.boton{ /* dentro del a accedemos a los componentes que tengas la clase de boton */ 
+                font-weight: 500;
+
+            }
+        }
+      
+    }
+
+}
