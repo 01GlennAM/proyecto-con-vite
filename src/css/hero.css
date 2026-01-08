@@ -1,0 +1,170 @@
+.hero{
+    background: #2566E3;
+    background: linear-gradient(90deg, rgba(37, 102, 227, 1) 30%, rgba(31, 187, 140, 1) 80%);
+    display: grid;
+    grid-template-columns: 55% 45%; /* crea las columnas */ 
+    gap: 20px;
+    border-radius: 10px;
+    color: #fff;
+    position: relative; /*  para poder usar el z index */ 
+    z-index: 1;
+    padding: 50px;
+
+    .col-1{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .titulo{
+            font-size: 48px;
+            font-weight: 400; /* este no lleva px va a si solo */ 
+            text-align: left;
+            margin: 0;
+        }
+
+        .descripcion{
+            font-size: 20px;
+            line-height: 160%;
+
+        }
+
+        .botones{
+            display: flex;
+            gap: 10px;
+
+            .trasparente{
+                background: rgba(0, 0, 0, 0.2);
+                padding: 15px;
+
+                &:hover{
+                    background: rgba(0, 0, 0, 0.4);
+                }
+
+            }
+
+            .secundario{
+            background: var(--azul-secundario);
+            padding: 15px;
+                &:hover{
+                    background: rgba(0, 0, 0, 0.4);
+                }
+
+        }
+        }
+
+        .estadisticas{
+            display: flex; 
+            align-items: center;
+            gap: 50px;
+            font-size: 18px;
+            font-weight: 500;
+
+            p{
+                display: flex;
+                gap: 10px; /* espaciado entre el texto y el icono */ 
+                align-items: center;
+            }
+
+            .especial{
+                padding-right: 40px;
+                border-right: 1px solid #fff;
+            }
+            
+            .icono{ /* este es el contenedor del svg */ 
+                display: block; 
+                width: 24px;
+                height: 24px;
+
+                svg{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+        }
+
+      
+    }
+
+    .col-2{
+        position: relative; /*  la relative sirve como referencia a otros elementos */ 
+
+        .slideshow{
+            position: absolute; /* absolute para q quede por encima del elemento guia q es el q tiene la relative */ 
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden; /* oculta las imagenes q estan al lado del slide */ 
+
+            .slides{
+                display: flex;
+
+                .slide{
+                    min-width: 100%;
+
+                    img{
+                        width: 100%;
+                        object-fit: cover; /* para que la imagen se adapte mejor  */ 
+                        vertical-align: top;
+                    }
+                }
+            }
+
+            .indicadores{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                position: absolute; /* para que quede encima de la imagenes */ 
+                bottom: 20px;
+                left: 0;
+
+                .indicador{
+                    width: 25px;
+                    height: 2px;
+                    border: none;
+                    background: rgba(255, 255, 255, 0.5); /*  el ultimo es lo trasparente */ 
+                    transition: 0.3s ease all;
+                    border-radius: 10px;
+
+                    &.activate{
+                        background: rgb(229, 8, 8); /*  el ultimo es lo trasparente */ 
+
+                    }
+
+
+                }
+
+
+            }
+        }
+    }
+
+    .overlay-video{ /*  se acomoda el video en la parte superior derecha */
+        background: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw; /* para que ocupe toda la pantalla */ 
+        height: 100vh;
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        &.active{
+            display: flex;
+        }
+
+        .video{
+            width: 50%;
+            height: 560px;
+            background: #fff;
+
+            iframe{
+                width: 100%;
+                vertical-align: top;
+                aspect-ratio: 16/9;
+            }
+        }
+
+    }
+}

@@ -24,7 +24,7 @@ header{
             height: 100%;
         }
         
-        /*esto es para el diseño del icono del trace es ese triandulo q esta al lado del icono (el before y el after) */  
+        /*esto es para el diseño del icono del trace es ese triangulo q esta al lado del icono (el before y el after) */  
 
         &::before{
             content: '';
@@ -45,8 +45,8 @@ header{
             border-top: 70px solid transparent;
             border-right: 70px solid transparent;
             border-bottom: 70px solid var(--azul-secundario);
-            top: -70px;
-            right: -70px;
+            top: -69px;
+            right: -69px;
         } 
     }
 
@@ -61,10 +61,10 @@ header{
             display: inline-flex;
             gap: 10px;
             align-items: center;
-            font-weight: 700;
+            font-weight: 700; /* grosor de la letra */ 
 
             &.boton{ /* dentro del a accedemos a los componentes que tengas la clase de boton */ 
-                font-weight: 500;
+                font-weight: 500; /* grosor letra */ 
 
             }
         }
