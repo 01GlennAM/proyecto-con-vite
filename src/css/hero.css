@@ -20,6 +20,7 @@
             font-weight: 400; /* este no lleva px va a si solo */ 
             text-align: left;
             margin: 0;
+            color: #fff;
         }
 
         .descripcion{

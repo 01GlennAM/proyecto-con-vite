@@ -4,31 +4,78 @@
 
     .grid{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; /* distribución de la columnas  */ 
         gap: 20px;
-    }
+    
 
-    .lado-a{
+    .lado-a{ /*  este es el contenedor padre de las imagenes */ 
         border-radius: 5px;
         overflow: hidden; /* oculta el contenido que se desborda en las imagenes para q no ocupen si no su espacio  */ 
         width: 100%;
         height: 100%;
         position: relative; /* ponemos relative por que las imagenes deben ir encima de esta caja padre y va aestar fija en el hijo se pone adsolute */ 
-
-        .thumb{
+    }
+        .thumb{ /* estas son las imagenes */ 
             width: 100%;
-            position: absolute;
+            position: absolute; /* pone todas las imagenes en la misma posición */ 
             opacity: 0;
             vertical-align: top; /* para eliminar un pequeñp espaciado que tiene las imagenes */
             transition: 0.9s ease all; 
 
              &.active{
-            opacity: 1;
+                opacity: 1;
             }
-         }
+        }
+
+    .taps{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        .tap{
+            background: #fff;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            cursor: pointer;
+            overflow: hidden;
+
+            &.active{ /* a la tap q le dan click que cambie el fondo  */ 
+                background: var(--azul-primario);
+                color: #fff;
+
+                .icono{
+                    color: #fff;
+                }
+            }
+
+            .icono{
+                display: flex;
+                align-items: center;
+                padding-left: 20px;
+                color: var(--azul-primario);
+
+                svg{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            .info{
+                padding: 10px;
+            }
+
+            }
+        }
+    
     }
+} 
+
+
+
+
+      
 
        
     
    
-}

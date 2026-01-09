@@ -1,0 +1,76 @@
+.precios{
+    margin: 100px;
+
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* crear las 4 columnas */ 
+        gap: 20px;
+
+        .plan{
+            background: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid transparent;
+            transition: 0.9s ease all; /* para q el borde no apareca tan brusco  */ 
+            cursor: pointer;
+
+            &.destacado{
+                background: var(--azul-secundario);
+                color: #fff;
+                .precio{
+                    span{
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+            }
+
+            &:hover{
+                border: 1px solid var(--azul-primario);
+            }
+
+            .nombre{
+                font-size: 32px;
+                font-weight: 700;
+                margin: 0;
+            }
+
+            .precio{
+                font-weight: 700;
+                margin-top : 10px;
+
+                span{
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: rgba(0, 0, 0, 0.5); /* para que la letra se vea como desbanecida */ 
+
+                }
+            }
+
+            .descripcion{
+                line-height: 150%;
+                margin: 0;
+            }
+
+            .lista{
+                list-style: none; /* para quitar los puntos que salian  */
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+               .icono{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                
+                svg{
+                    color: var(--azul-primario);
+                }
+               }
+                
+            }
+        }
+    }
+}
